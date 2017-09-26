@@ -1,0 +1,69 @@
+
+<div >
+
+    <div class="row col-sm-12 col-md-12 col-xs-12" style="margin-top:40px;">
+      <form name="registerForm" >
+        <div style="width:400px;;margin:auto " class="margin-auto " >
+          <md-toolbar class="col-sm-12 col-md-12 col-xs-12 centered">
+                <div class="md-toolbar-tools"> Register</div>
+           </md-toolbar>
+           <md-content class="col-sm-12 col-md-12 col-xs-12 " style="min-height:300px">
+             <div class="col-sm-12 col-md-12 col-xs-12 " style="margin-top:5px;" ng-messages="registerForm.$error">
+                    <div style="width:50%;margin:auto;color:red" ng-bind="error_msg">
+                      Please enter the valid email.
+                    </div>
+
+
+             </div>
+             <md-input-container class="md-block mt"  style="margin-top:50px;">
+                <!-- Use floating placeholder instead of label -->
+                <md-icon ><ng-md-icon icon="email"></ng-md-icon></md-icon>
+                <input ng-model="user.email" type="email" name="email" placeholder="Email (required)" required ng-required="true">
+                <div ng-messages="registerForm.email.$error">
+                  <div ng-show="registerForm.email.$touched && registerForm.email.$invalid">
+                    Please enter the valid email.
+                  </div>
+                </div>
+             </md-input-container>
+             <md-input-container class="md-block mt">
+                <!-- Use floating placeholder instead of label -->
+                <md-icon ><ng-md-icon icon="person"></ng-md-icon></md-icon>
+                <input ng-model="user.username" name="username" type="text" placeholder="Username (required)" ng-required="true">
+                <div ng-messages="registerForm.username.$error.required">
+                  <div ng-show="registerForm.username.$touched && registerForm.username.$invalid">
+                    Please enter the username.
+                  </div>
+                </div>
+             </md-input-container>
+              <md-input-container class="md-block">
+                <!-- Use floating placeholder instead of label -->
+                <md-icon ><ng-md-icon icon="vpn_key" ></ng-md-icon></md-icon>
+                <input ng-model="user.password" name="password" type="password" placeholder="Password (required)" ng-required="true">
+                <div ng-messages="registerForm.password.$error">
+                  <div ng-show="registerForm.password.$touched && registerForm.password.$invalid">
+                    Please enter the password.
+                  </div>
+                </div>
+              </md-input-container>
+              <div class="col-sm-12 col-md-12 col-xs-12 centered">
+                  <md-button class="md-raised md-primary" type="submit" ng-click="registerUser()" ng-disabled="registerForm.$invalid || shwRegBtn " >
+                    <ng-md-icon icon="lock_open" ></ng-md-icon>
+                    Register
+                  </md-button>
+
+              </div>
+             <div class="col-sm-12 col-md-12 col-xs-12 centered mt10 mb10">
+                  <a ng-href='/login'>Login an account</a>
+              </div>
+
+          </md-content>
+      </div>
+      </form>
+    </div>
+
+
+
+</md-content>
+
+</div>
+

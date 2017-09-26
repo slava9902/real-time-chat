@@ -1,0 +1,39 @@
+<div style="text-align:center">
+
+  <!--<h1 style="margin-top:10%">Welcome To Real Time Chat Home Page</h1>-->
+  <div style="width:80%; height:350px;padding:5px;overflow-y:scroll; border: 1px solid blue;margin:10px" >
+    <div style="width:100%;" ng-repeat="m in messages">
+      <div style="width:100%;float:left;height:40px;border-bottom:1px solid black;">
+      <!--<div style="width:100%" ng-repeat="m in messages">-->
+          <div style="vertical-align: middle;margin-top:5px;">
+            <div style="float:left;font-weight:bold;text-align:left;font-size:20px;color:black;display: inline-block;">{{m.from}} -> </div>
+            <div style="float:left;text-align:left;margin-top:3px; font-size:15px;color:black">{{m.msg}}  </div>
+          </div>
+      </div>
+
+
+    <!--</div>-->
+    </div>
+  </div>
+
+  <form style="width:100%;margin:10px ">
+    <div style="width:100%;float:left">
+      <div  style="width:70%;float:left">
+        <textarea style="width:100%; height:120px" ng-model="textMessage">
+
+        </textarea>
+
+      </div>
+      <div style="width:10%;float:left">
+        <md-button class="md-raised md-primary" type="submit" ng-click="sendMessage()" ng-disabled="registerForm.$invalid || shwRegBtn " >
+          <ng-md-icon icon="lock_open" ></ng-md-icon>
+          Send
+        </md-button>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
+

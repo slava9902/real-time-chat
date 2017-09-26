@@ -1,0 +1,51 @@
+
+<div >
+
+    <div class="row col-sm-12 col-md-12 col-xs-12" style="margin-top:40px;">
+      <form name="loginForm" >
+        <div style="width:400px;;margin:auto " class="margin-auto " >
+          <md-toolbar class="col-sm-12 col-md-12 col-xs-12 centered">
+                <div class="md-toolbar-tools"> Login</div>
+           </md-toolbar>
+           <md-content class="col-sm-12 col-md-12 col-xs-12 " style="height:300px">
+
+             <md-input-container class="md-block mt">
+                <!-- Use floating placeholder instead of label -->
+                <md-icon ><ng-md-icon icon="email"></ng-md-icon></md-icon>
+                 <input ng-model="user.email" type="email" name="email"  placeholder="Email (required)" ng-required="true">
+                <div ng-messages="loginForm.email.$error">
+                  <div ng-show="loginForm.email.$touched && loginForm.email.$invalid">
+                    Please enter the valid email.
+                  </div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block">
+                <!-- Use floating placeholder instead of label -->
+                <md-icon ><ng-md-icon icon="vpn_key" ></ng-md-icon></md-icon>
+                 <input ng-model="user.password" type="password" name="password" placeholder="Password (required)" ng-required="true">
+                <div ng-messages="loginForm.password.$error">
+                  <div ng-show="loginForm.password.$touched && loginForm.password.$invalid">
+                    Please enter the valid password.
+                  </div>
+                </div>
+                <a href="/forgot-password" style="float:right;color:#FF9900"> forget password</a>
+              </md-input-container>
+              <div class="col-sm-12 col-md-12 col-xs-12 centered">
+                  <md-button class="md-raised md-primary"  ng-disabled="loginForm.$invalid || shwLoginBtn " ng-click="loginUser()"  ><ng-md-icon icon="lock_open" ></ng-md-icon> Login</md-button>
+
+              </div>
+             <div class="col-sm-12 col-md-12 col-xs-12 centered mt10">
+                  <a ng-href='/register'>Create an account</a>
+              </div>
+
+          </md-content>
+      </div>
+      </form>
+    </div>
+
+
+
+</md-content>
+
+</div>
+

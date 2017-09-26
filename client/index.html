@@ -1,0 +1,114 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+      <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="app/app.css">
+
+
+
+      <!-- Bootstrap core CSS -->
+      <link href="assets/css/bootstrap.css" rel="stylesheet">
+      <!--external css-->
+      <!--<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />-->
+      <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+      <!--<link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />-->
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+      <!-- Custom styles for this template -->
+      <link href="assets/css/style.css" rel="stylesheet">
+      <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+
+
+
+      <!-- injector:css -->
+      <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/main/main.css">
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </head>
+  <body ng-app="App" ng-controller="MainCtrl">
+
+    <md-toolbar >
+        <div class="md-toolbar-tools">
+           <md-button class="md-icon-button m0" aria-label="Menu" ng-click="collapsed=!collapsed">
+            <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+          Real Time Chat<span flex></span>
+
+          <md-button ng-show="loggedInUser.status !== 'login'" class="regular hidden-xs" style="width:20px !important;float:right" aria-label="User Account">
+              <ng-md-icon icon="account_circle"></ng-md-icon>
+              <md-caption class="md-caption" ng-bind="loggedInUser.username"></md-caption>
+          </md-button>
+          <md-button ng-show="loggedInUser.status !== 'login'" class="regular" style="width: 25px !important;margin-right:10px;float:right" aria-label="User Account" ng-click="logOut()">
+              <ng-md-icon icon="logout"></ng-md-icon>
+              <md-caption class="md-caption">Logout</md-caption>
+          </md-button>
+        </div>
+
+    </md-toolbar>
+    <!-- Add your site or application content here -->
+    <div ui-view=""></div>
+
+
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-aria/angular-aria.js"></script>
+      <script src="bower_components/angular-messages/angular-messages.js"></script>
+      <script src="bower_components/angular-material/angular-material.js"></script>
+      <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-socket-io/socket.js"></script>
+      <!-- endbower -->
+    <!-- endbuild -->
+   <script src="bower_components/socket.io-client/dist/socket.io.js"></script>
+
+
+        <!-- build:js({.tmp,client}) app/app.js -->
+
+        <script src="app/app.js"></script>
+          <!-- injector:js -->
+          <script src="app/main/controller/home.js"></script>
+          <script src="app/main/controller/login.js"></script>
+          <script src="app/main/controller/main.js"></script>
+          <script src="app/main/controller/register.js"></script>
+          <script src="app/main/controller/resetPassword.js"></script>
+          <script src="app/main/main.js"></script>
+          <script src="app/main/service/auth.js"></script>
+          <script src="components/navbar/navbar.controller.js"></script>
+          <!-- endinjector -->
+        <!-- endbuild -->
+</body>
+</html>
